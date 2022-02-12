@@ -1,0 +1,166 @@
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.container {
+  display         : flex;
+  flex-wrap       : wrap;
+  background-color: #eeeeee;
+  margin          : 2rem auto;
+  width           : 1000px;
+
+}
+
+.title {
+  width     : 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.content {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: flex-start;
+  padding        : 1rem;
+  padding-bottom : 3rem;
+  width          : 50%;
+  background-color: orangered   ;
+}
+.card{
+  width: 50%;
+  background-color: red;
+}
+
+
+
+.content input {
+  border          : 0;
+  border-bottom   : 0.1rem solid #000;
+  background-color: transparent;
+  outline         : transparent;
+
+}
+.content input[type="number"]{
+-moz-appearance: textfield;
+appearance: textifield;
+}
+.content button {
+  cursor: pointer;
+}
+
+.content label {
+  display  : block;
+  font-size: 0.8rem;
+  margin   : 0.4rem 0
+}
+
+.error {
+  color: #ee4444;
+}
+
+.error label,
+p {
+  display: block;
+  color  : #ee4444;
+}
+
+p{
+  font-size: 0.6rem;
+  color  : #ee4444;
+
+}
+.error input{
+  border-bottom:1px solid #ee4444;
+}
+.active{
+  background-color:#ec8d54 ;
+}
+
+.request-data {
+  width: 50%;
+}
+
+.data_income button {
+  border    : 0.1rem solid #000;
+  padding   : 10px;
+  width     : 5rem;
+  cursor    : pointer;
+  transition: filter .2s;
+}
+
+.data_income button:hover {
+  filter: brightness(1.2);
+}
+
+.data_income button.gross {
+  background-color: #ec8d54;
+  color           : #fff;
+  border-radius   : 0.5rem 0 0 0.5rem;
+}
+
+.data_income button.liquid {
+  background-color: transparent;
+  color           : #000;
+  border-radius   : 0 0.5rem 0.5rem 0;
+}
+
+.response-data {
+  width: 50%;
+}
+
+
+.data_indexing {
+  width         : 11rem;
+  padding-bottom: 0.1rem;
+}
+
+.data_indexing label {
+  padding-top: 0.2rem;
+}
+
+.data_indexing button {
+  border          : 0.1rem solid #000;
+  padding         : 0.6rem 0.3rem;
+  background-color: transparent;
+  font-size       : 0.8rem;
+}
+
+button.btn-pre {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+button.pos {
+  background-color: #ec8d54;
+}
+
+button.btn-fixed {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.btn {
+  color        : #000;
+  font-weight  : 600;
+  border-radius: 0.4rem;
+  margin-top   : 2rem;
+  border       : 1px solid #000;
+
+}
+
+.btn:hover {
+  filter: brightness(0.4);
+}
+
+.btn-clear {
+  padding: 0.6rem 1.5rem;
+  border : 1px solid #000;
+
+}
+
+.btn-simule {
+  padding         : 0.6rem 3rem;
+  background-color: #959595;
+}

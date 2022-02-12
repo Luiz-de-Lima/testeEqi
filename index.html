@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Calculadora de Investimentos</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="title">
+            <h1>Simulador de Investimentos</h1>
+        </div>
+        <section class="content">
+
+            <div class="request-data">
+                <div class="data_income">
+                    <label for="rendimento">Rendimento &#x2139;</label>
+                    <button class="gross">Bruto</button><button class="liquid">Líquido</button>
+                </div>
+                <div class="data_initial">
+                    <label for="Aporte Inicial">Aporte Inicial</label>
+                    <input type="number" name="aporte" id="inicial-aporte" class="isvalid" >
+                    <p></p>
+                </div>
+                <div class="data_initial" id="data">
+                    <label for="prazo em(meses)">Prazo em(meses)</label>
+                    <input type="number" name="meses" class="isvalid">
+                    <p></p>
+                </div>
+                <div class="data_initial">
+                    <label for="IPCA">IPCA (ao ano)</label>
+                    <input type="text" name="ipca" readonly>
+                </div>
+                <button class="btn btn-clear">Limpar campos</button>
+            </div>
+            <div class="response-data">
+                <div class="data_indexing">
+                    <label for="tipos de indexação">Tipos de indexação</label>
+                    <button class="btn-pre">PRÉ</button><button class="pos">PÓS</button><button
+                        class="btn-fixed">FIXADO</button>
+                </div>
+                <div class="data_initial">
+                    <label for="aporte mensal">Aporte Mensal</label>
+                    <input type="number" name="aporte-mensal" class="isvalid">
+                    <p></p>
+                </div>
+                <div class="data_initial">
+                    <label for="Rentabilidade">Rentabilidade</label>
+                    <input type="number" name="rentabilidade" class="isvalid">
+                    <p></p>
+                </div>
+                <div class="data_initial">
+                    <label for="CDI">CDI(ao ano)</label>
+                    <input type="text" name="cdi" readonly>
+                </div>
+                <button class="btn btn-simule">Simular</button>
+            </div>
+           
+        </section>
+        <section class="card">
+            card
+        </section>
+    </main>
+</body>
+
+
+<script src="script.js"></script>
+
+</html>
