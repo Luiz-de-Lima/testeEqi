@@ -56,12 +56,23 @@ const dataIndicadores = () => {
         })
 }
 const dataSimulacoes = () => {
+    function filtersSimulations(data) {
+        console.log(data)
+        data.forEach((tipoIndexacao) => {
+
+            const finalValue = document.querySelectorAll('.valor-final')
+            finalValue.forEach(value => {
+                value.innerText = tipoIndexacao.aliquotaIR
+            })
+        })
+
+    }
     const getSimulacoes = () => {
-        const url = 'http://localhost:3000/simulacoes'
+        const url = 'http://localhost:3000/simulacoes?tipoIndexacao=pos&tipoRendimento=liquido'
         fetch(url)
             .then(response => {
                 response.json()
-            .then(data => console.log(data))
+                    .then(data => filtersSimulations(data))
             })
     }
     getSimulacoes()

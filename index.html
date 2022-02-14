@@ -21,11 +21,14 @@
             <div class="request-data">
                 <div class="data_income">
                     <label for="rendimento">Rendimento &#x2139;</label>
-                    <button class="gross">Bruto</button><button class="liquid">Líquido</button>
+                    <input type="radio" name="tipoRendimento">
+                    <button class="gross" id="bruto">Bruto</button>
+                    <input type="radio" name="tipoRendimento">
+                    <button class="liquid" id="liquido">Líquido</button>
                 </div>
                 <div class="data_initial">
                     <label for="Aporte Inicial">Aporte Inicial</label>
-                    <input type="number" name="aporte" id="inicial-aporte" class="isvalid" >
+                    <input type="number" name="aporte" id="inicial-aporte" class="isvalid">
                     <p></p>
                 </div>
                 <div class="data_initial" id="data">
@@ -61,10 +64,33 @@
                 </div>
                 <button class="btn btn-simule">Simular</button>
             </div>
-           
+
         </section>
-        <section class="card">
-            card
+        <section class="cards">
+            <div class="cardItem">
+                <h4>Valor Bruto</h4>
+                <span class="Valor-bruto"></span>
+            </div>
+            <div class="cardItem">
+                <h4>Aliquota</h4>
+                <span class="aliquota"></span>
+            </div>
+            <div class="cardItem">
+                <h4>Valor Pago em Ir</h4>
+                <span name="valor-pago-em"></span>
+            </div>
+            <div class="cardItem">
+                <h4>Valor Final Líquido</h4>
+                <span name="valor-final"></span>
+            </div>
+            <div class="cardItem">
+                <h4>Valor Total investido</h4>
+                <span name="valor-final"></span>
+            </div>
+            <div class="cardItem">
+                <h4>Ganho Líquido</h4>
+                <span name="valor-final"></span>
+            </div>
         </section>
     </main>
 </body>
