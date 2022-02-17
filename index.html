@@ -19,15 +19,16 @@
         <section class="content">
 
             <div class="request-data">
+              <label for="rendimento">Rendimento &#x2139;</label>
+
                 <div class="data_income">
-                    <label for="rendimento">Rendimento &#x2139;</label>
-                    <input type="radio" name="tipoRendimento">
-                    <button class="gross" id="bruto">Bruto</button>
-                    <input type="radio" name="tipoRendimento">
-                    <button class="liquid" id="liquido">Líquido</button>
+                    <input type="checkbox" name="tipoRendimento" id="bruto">
+                    <label class="gross" for="bruto">Bruto</label>
+                    <input type="checkbox" name="tipoRendimento" id="liquido">
+                    <label class="liquid" for="liquido">Líquido</label>
                 </div>
                 <div class="data_initial">
-                    <label for="Aporte Inicial">Aporte Inicial</label>
+                    <label for="inicial-aporte">Aporte Inicial</label>
                     <input type="number" name="aporte" id="inicial-aporte" class="isvalid">
                     <p></p>
                 </div>
@@ -43,10 +44,20 @@
                 <button class="btn btn-clear">Limpar campos</button>
             </div>
             <div class="response-data">
+                <label>Tipos de indexação</label>
+
                 <div class="data_indexing">
-                    <label for="tipos de indexação">Tipos de indexação</label>
-                    <button class="btn-pre">PRÉ</button><button class="pos">PÓS</button><button
-                        class="btn-fixed">FIXADO</button>
+                    <input type="checkbox" name="tiposdeinexação" id="pre" />
+                    <label for="pre" class="pre">PRÉ</label>
+                    
+                    <input type="checkbox" class="pos" name="tiposdeindexação" id="pos"/>
+                    <label for="pos" class="pos">
+                        PÓS
+                    </label>
+                    <input type="checkbox" class="btn-fixed" name="tiposdeinexação" id="fixado" />
+                    <label for="fixado" class="fixed">
+                        FIXADO
+                    </label>
                 </div>
                 <div class="data_initial">
                     <label for="aporte mensal">Aporte Mensal</label>
@@ -69,27 +80,27 @@
         <section class="cards">
             <div class="cardItem">
                 <h4>Valor Bruto</h4>
-                <span class="Valor-bruto"></span>
+                <span name="valorFinalBruto"></span>
             </div>
             <div class="cardItem">
-                <h4>Aliquota</h4>
-                <span class="aliquota"></span>
+                <h4>Aliquota do Ir</h4>
+                <span name="aliquotaIR"></span>
             </div>
             <div class="cardItem">
                 <h4>Valor Pago em Ir</h4>
-                <span name="valor-pago-em"></span>
+                <span name="valorPagoIR"></span>
             </div>
             <div class="cardItem">
                 <h4>Valor Final Líquido</h4>
-                <span name="valor-final"></span>
+                <span name="valorFinalLiquido"></span>
             </div>
             <div class="cardItem">
                 <h4>Valor Total investido</h4>
-                <span name="valor-final"></span>
+                <span name="valorTotalInvestido"></span>
             </div>
             <div class="cardItem">
                 <h4>Ganho Líquido</h4>
-                <span name="valor-final"></span>
+                <span name="ganhoLiquido"></span>
             </div>
         </section>
     </main>
