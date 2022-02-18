@@ -12,100 +12,102 @@
 </head>
 
 <body>
+
     <main class="container">
         <div class="title">
             <h1>Simulador de Investimentos</h1>
         </div>
         <section class="content">
 
-            <div class="request-data">
-              <label for="rendimento">Rendimento &#x2139;</label>
+            <h3>Simulador</h3>
+            <div class="form-simulation">
+                <label for="rendimento">Rendimento &#x2139;</label>
 
-                <div class="data_income">
-                    <input type="checkbox" name="tipoRendimento" id="bruto">
-                    <label class="gross" for="bruto">Bruto</label>
-                    <input type="checkbox" name="tipoRendimento" id="liquido">
-                    <label class="liquid" for="liquido">Líquido</label>
+                <div class="tipo-rendimento">
+                    <input type="radio" name="tipoRendimento" id="bruto" value="bruto">
+                    <label class="bruto" for="bruto">Bruto</label>
+                    <input type="radio" name="tipoRendimento" id="liquido" value="liquido">
+                    <label class="liquido" for="liquido">Líquido</label>
                 </div>
-                <div class="data_initial">
+                <div class="dados-iniciais">
                     <label for="inicial-aporte">Aporte Inicial</label>
                     <input type="number" name="aporte" id="inicial-aporte" class="isvalid">
                     <p></p>
                 </div>
-                <div class="data_initial" id="data">
+                <div class="dados-iniciais" id="data">
                     <label for="prazo em(meses)">Prazo em(meses)</label>
                     <input type="number" name="meses" class="isvalid">
                     <p></p>
                 </div>
-                <div class="data_initial">
+                <div class="dados-iniciais">
                     <label for="IPCA">IPCA (ao ano)</label>
                     <input type="text" name="ipca" readonly>
                 </div>
                 <button class="btn btn-clear">Limpar campos</button>
             </div>
-            <div class="response-data">
+            <div class="form-indexacao">
                 <label>Tipos de indexação</label>
 
-                <div class="data_indexing">
-                    <input type="checkbox" name="tiposdeinexação" id="pre" />
+                <div class="dados-indexacao">
+                    <input type="radio" name="tipoIndexacao" id="pre" value="pre" />
                     <label for="pre" class="pre">PRÉ</label>
-                    
-                    <input type="checkbox" class="pos" name="tiposdeindexação" id="pos"/>
+
+                    <input type="radio" name="tipoIndexacao" id="pos" value="pos" />
                     <label for="pos" class="pos">
                         PÓS
                     </label>
-                    <input type="checkbox" class="btn-fixed" name="tiposdeinexação" id="fixado" />
+                    <input type="radio" class="btn-fixed" name="tipoIndexacao" id="fixado" value="ipca" />
                     <label for="fixado" class="fixed">
                         FIXADO
                     </label>
                 </div>
-                <div class="data_initial">
+                <div class="dados-iniciais">
                     <label for="aporte mensal">Aporte Mensal</label>
                     <input type="number" name="aporte-mensal" class="isvalid">
                     <p></p>
                 </div>
-                <div class="data_initial">
-                    <label for="Rentabilidade">Rentabilidade</label>
+                <div class="dados-iniciais">
+                    <label for="rentabilidade">Rentabilidade</label>
                     <input type="number" name="rentabilidade" class="isvalid">
                     <p></p>
                 </div>
-                <div class="data_initial">
+                <div class="dados-iniciais">
                     <label for="CDI">CDI(ao ano)</label>
                     <input type="text" name="cdi" readonly>
                 </div>
-                <button class="btn btn-simule">Simular</button>
+                <button class="btn btn-simule" disabled>Simular</button>
             </div>
 
         </section>
-        <section class="cards">
-            <div class="cardItem">
-                <h4>Valor Bruto</h4>
+        <section class="form-result">
+            <h3>Resultado da Simulação</h3>
+            <div class="result-item">
+                <h6>Valor Bruto</h6>
                 <span name="valorFinalBruto"></span>
             </div>
-            <div class="cardItem">
-                <h4>Aliquota do Ir</h4>
+            <div class="result-item">
+                <h6>Aliquota do Ir</h6>
                 <span name="aliquotaIR"></span>
             </div>
-            <div class="cardItem">
-                <h4>Valor Pago em Ir</h4>
+            <div class="result-item">
+                <h6>Valor Pago em Ir</h6>
                 <span name="valorPagoIR"></span>
             </div>
-            <div class="cardItem">
-                <h4>Valor Final Líquido</h4>
+            <div class="result-item">
+                <h6>Valor Final Líquido</h6>
                 <span name="valorFinalLiquido"></span>
             </div>
-            <div class="cardItem">
-                <h4>Valor Total investido</h4>
+            <div class="result-item">
+                <h6>Valor Total investido</h6>
                 <span name="valorTotalInvestido"></span>
             </div>
-            <div class="cardItem">
-                <h4>Ganho Líquido</h4>
+            <div class="result-item">
+                <h6>Ganho Líquido</h6>
                 <span name="ganhoLiquido"></span>
             </div>
         </section>
     </main>
 </body>
-
 
 <script src="script.js"></script>
 

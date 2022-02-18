@@ -8,6 +8,7 @@
 
 .container {
   display         : flex;
+  justify-content : center;
   flex-wrap       : wrap;
   background-color: #eeeeee;
   margin          : 2rem auto;
@@ -16,40 +17,22 @@
 }
 
 .title {
-  width     : 100%;
   text-align: center;
-  margin-top: 1.5rem;
+  width     : 100%;
+
 }
 
 .content {
   display        : flex;
-  flex-wrap      : wrap;
   justify-content: flex-start;
+  flex-wrap      : wrap;
   padding        : 1rem;
   padding-bottom : 3rem;
-  width          : 50%;
-
 }
 
-.cards {
-  width          : 50%;
-  display        : flex;
-  flex-wrap      : wrap;
-  justify-content: space-between;
-  align-items    : center;
-
+.content h3 {
+  width: 100%;
 }
-
-.cardItem {
-  width           : 150px;
-  background-color: #f3f3f3;
-  border          : 1px solid;
-  text-align      : center;
-  box-shadow      : 1px 1px 3px;
-  height          : 80px;
-}
-
-
 
 .content input {
   border          : 0;
@@ -94,48 +77,44 @@ p {
   border-bottom: 1px solid #ee4444;
 }
 
-.active {
-  background-color: #ec8d54;
-}
-
-.request-data {
+.form-simulation {
   width: 50%;
 }
-.data_income{
+
+.tipo-rendimento {
   display: flex;
 }
-.data_income label{
+
+.tipo-rendimento label {
   padding: 0.5rem;
-  cursor: pointer;
-  border: 1px solid #000;
+  cursor : pointer;
+  border : 1px solid #000;
 }
-.data_income input[type="checkbox"] {
+
+.tipo-rendimento input[type="radio"] {
   display: none;
+  
 }
 
-.data_income input[type="checkbox"]:checked +label {
+.tipo-rendimento input[type="radio"]:checked+label {
   background-color: #ec8d54;
-  color: #eeeeee;
-  border: 1px solid #000;
-  cursor: pointer;}
-
-.data_income label.gross {
-  background-color: transparent;
-  border-radius: 0.5rem 0 0 0.5rem;
+  color           : #eeeeee;
+  border          : 1px solid #000;
+  cursor          : pointer;
 }
 
-.data_income label.liquid {
+.tipo-rendimento label.bruto {
+  background-color: transparent;
+  border-radius   : 0.5rem 0 0 0.5rem;
+}
+
+.tipo-rendimento label.liquido {
   background-color: transparent;
   color           : #000;
   border-radius   : 0 0.5rem 0.5rem 0;
 }
 
-.response-data {
-  width: 50%;
-}
-
-
-.data_indexing {
+.dados-indexacao {
   width         : 11rem;
   padding-bottom: 0.1rem;
   display       : flex;
@@ -143,38 +122,42 @@ p {
   flex-wrap     : wrap;
 }
 
-.data_indexing label {
+.dados-indexacao label {
   padding: 0.5rem;
-  cursor: pointer;
+  cursor : pointer;
 }
 
-.data_indexing label:first-child {
+.dados-indexacao label:first-child {
   width: 100%;
 }
-.data_indexing input{
+
+.dados-indexacao input {
   display: none;
 }
 
-.data_indexing input:checked +label{
+.dados-indexacao input:checked+label {
   background-color: #ec8d54;
-  color: #eeeeee;
-  border: 1px solid #000;
-  cursor: pointer;
-
-}
-.data_indexing label.pos {
-  border: 1px solid #000;
+  color           : #eeeeee;
+  border          : 1px solid #000;
+  cursor          : pointer;
 }
 
-.data_indexing label.pre {
+.dados-indexacao label.pos {
+  border: 1px solid #000;
+
+}
+
+.dados-indexacao label.pre {
   border       : 1px solid;
   border-radius: 6px 0px 0rem 6px;
+  padding      : 0.5rem 0.6rem;
 
 }
 
-.data_indexing label.fixed {
+.dados-indexacao label.fixed {
   border       : 1px solid;
-  border-radius: 0px 6px 6px 0;
+  border-radius: 0 6px 6px 0;
+  padding      : 0.5rem 0.3rem;
 
 }
 
@@ -204,15 +187,50 @@ p {
 
 .activeBtn {
   background-color: #ec8d54;
+  transition      : filter .2s;
 }
 
-.cardItem h4 {
-  font-size    : 15px;
-  margin-bottom: 30px;
-  line-height  : 20px;
+.activeBtn:hover {
+  filter: brightness(1.3)
 }
 
-span {
+.form-result {
+  width          : 50%;
+  flex-wrap      : wrap;
+  justify-content: space-around;
+  display        : none;
+}
+
+.show {
+  display: flex;
+}
+
+
+.form-result h3 {
+  width      : 100%;
+  padding-top: 1.0rem;
+}
+
+.result-item {
+  width           : 150px;
+  background-color: #f3f3f3;
+  text-align      : center;
+  box-shadow      : 0 0 0.2rem ;
+  height          : 70px;
+  padding         : 2px;
+
+}
+
+
+.result-item h6 {
+  font-size    : 14px;
+  margin-bottom: 20px;
+  line-height  : 10px;
+  padding      : 0.2rem;
+
+}
+
+.result-item span {
   font-weight: 700;
 }
 

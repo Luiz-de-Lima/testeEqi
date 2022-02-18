@@ -2,14 +2,34 @@
 const btnClear = document.querySelector('.btn-clear')
 const paragraph = document.querySelectorAll('p')
 const inputs = [...document.querySelectorAll('.isvalid')]
+const cardShow = document.querySelector('.form-result')
+
+const inputsTipoRendimento = [...document.querySelectorAll('input[name="tipoRendimento"]')]
+const inputsTipoIndexacao = [...document.querySelectorAll('input[name="tipoIndexacao"]')]
 
 
-btnClear.addEventListener('click', handleClear)
+const bntSimule = document.querySelector('.btn-simule')
 
-const bntSimule = document.querySelector('.btn-simule').ariaDisabled=true
-console.log(bntSimule)
+let tipoRendimento;
+let tipoIndexacao;
 
-function handleClear(e) {
+const saveOptionTipoRendimento = (ev) => {
+  tipoRendimento = ev.target.value
+}
+
+const saveOptionTipoIndexacao = (ev) => {
+  tipoIndexacao = ev.target.value
+}
+
+
+inputsTipoRendimento.forEach((input) => input.addEventListener('click', saveOptionTipoRendimento)
+)
+
+inputsTipoIndexacao.forEach((input) => input.addEventListener('click', saveOptionTipoIndexacao)
+)
+
+
+const handleClear = (e) => {
   e.preventDefault()
   inputs.forEach(input => {
     input.parentNode.classList.remove('error')
@@ -39,12 +59,12 @@ function handleValiDate(e) {
   } else {
     parent.classList.remove('error')
     feedbackError.innerText = ''
+    bntSimule.disabled = false
+    bntSimule.classList.add('activeBtn')
   }
 }
 
 inputs.forEach((input) => {
-  bntSimule.addEventListener('click', dataSimulacoes)
-
   input.addEventListener('blur', handleValiDate)
 })
 
@@ -66,37 +86,52 @@ const dataIndicadores = () => {
         .then(data => filtersInputs(data))
     })
 }
-function dataSimulacoes() {
-  function filtersSimulations(data) {
-    console.log(data)
+const dataSimulacoes = () => {
+  cardShow.classList.add('show')
+  const filtersSimulations = (data) => {
+    
     data.forEach((item) => {
 
-      const valorFinalBruto = document.querySelector(`span[name="valorFinalBruto"]`).innerHTML = `R$ ${item.valorFinalBruto}`
-      const aliquotaIR = document.querySelector(`span[name="aliquotaIR"]`).innerHTML = `${item.aliquotaIR}%`
-      const valorPagoIR = document.querySelector(`span[name="valorPagoIR"]`).innerHTML = `R$ ${item.valorPagoIR}`
-      const valorFinalLiquido = document.querySelector(`span[name="valorFinalLiquido"]`).innerHTML = `R$ ${item.valorFinalLiquido}`
-      const valorTotalInvestido = document.querySelector(`span[name="valorTotalInvestido"]`).innerHTML = `R$ ${item.valorTotalInvestido}`
-      const ganhoLiquido = document.querySelector(`span[name="ganhoLiquido"]`).innerHTML = `R$ ${item.ganhoLiquido}`
+      const valorFinalBruto = document.querySelector('span[name="valorFinalBruto"]')
+      valorFinalBruto.innerHTML = `R$ ${item.valorFinalBruto}`
+
+      const aliquotaIR = document.querySelector('span[name="aliquotaIR"]')
+      aliquotaIR.innerHTML = `${item.aliquotaIR}%`
+
+      const valorPagoIR = document.querySelector(`span[name="valorPagoIR"]`)
+      valorPagoIR.innerHTML = `R$ ${item.valorPagoIR}`
+
+      const valorFinalLiquido = document.querySelector(`span[name="valorFinalLiquido"]`)
+      valorFinalLiquido.innerHTML = `R$ ${item.valorFinalLiquido}`
+
+      const valorTotalInvestido = document.querySelector(`span[name="valorTotalInvestido"]`)
+      valorTotalInvestido.innerHTML = `R$ ${item.valorTotalInvestido}`
+
+      const ganhoLiquido = document.querySelector(`span[name="ganhoLiquido"]`)
+      ganhoLiquido.innerHTML = `R$ ${item.ganhoLiquido}`
 
     })
 
 
   }
   const getSimulacoes = () => {
-    const url = 'http://localhost:3000/simulacoes?tipoIndexacao=ipca&tipoRendimento=bruto'
+    const url = `http://localhost:3000/simulacoes?tipoIndexacao=${tipoIndexacao}&tipoRendimento=${tipoRendimento}`
     fetch(url)
-      .then(response => {
+      .then((response) => {
         response.json()
           .then(data => filtersSimulations(data))
       })
   }
+
   getSimulacoes()
+ 
+
 }
 dataIndicadores()
 
-const btnBruto = document.querySelector('#bruto')
-if (btnBruto.id === 'bruto')
-  console.log('ok')
+btnClear.addEventListener('click', handleClear)
+bntSimule.addEventListener('click', dataSimulacoes)
+
 
 
 
